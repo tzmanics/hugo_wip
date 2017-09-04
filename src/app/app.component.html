@@ -1,3 +1,6 @@
-<h1>
-  {{title}}
-</h1>
+<button class="btn btn-secondary" (click)="subscribe()">Subscribe</button>
+<button class="btn btn-secondary" (click)="lightOff()">Off</button>
+<button class="btn btn-secondary" (click)="getAllLights()">All Lights</button>
+<p>
+  {{ lights || json }}
+</p>
