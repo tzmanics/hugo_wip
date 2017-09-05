@@ -1,10 +1,9 @@
-<button class="btn btn-secondary" (click)="lightOff()">Off</button>
-<button class="btn btn-secondary" (click)="lightOn()">On</button>
-
 <ul *ngFor="let light of lights; let i = index">
   <li>
     <div class="light-box">
       <h3> {{ light.name }} </h3>
+      <button class="btn btn-secondary" (click)="lightOff(i+1)">Off</button>
+      <button class="btn btn-secondary" (click)="lightOn(i+1)">On</button>
     </div>
   </li>
 </ul>
