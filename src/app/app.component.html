@@ -17,25 +17,23 @@
           [smallStep]=10>
         </kendo-slider>
       </div>
-      <div class="light-go" *ngIf="light.state.hue">
-        <div class="light-hue">
-          <kendo-slider
-            [(ngModel)]="light.state.hue"
-            (click)="lightHue(i+1, light.state.hue)"
-            [min]=0
-            [max]=65535
-            [smallStep]=1500>
-          </kendo-slider>
-          </div>
-          <div class="light-sat">
-          <kendo-slider
-            [(ngModel)]="light.state.sat"
-            (click)="lightSat(i+1, light.state.sat)"
-            [min]=0
-            [max]=254
-            [smallStep]=10>
-          </kendo-slider>
+      <div class="light-hue" *ngIf="light.state.hue >= 0">
+        <kendo-slider
+          [(ngModel)]="light.state.hue"
+          (click)="lightHue(i+1, light.state.hue)"
+          [min]=0
+          [max]=65535
+          [smallStep]=1500>
+        </kendo-slider>
         </div>
+        <div class="light-sat" *ngIf="light.state.sat >= 0">
+        <kendo-slider
+          [(ngModel)]="light.state.sat"
+          (click)="lightSat(i+1, light.state.sat)"
+          [min]=0
+          [max]=254
+          [smallStep]=10>
+        </kendo-slider>
       </div>
     </div>
   </li>
