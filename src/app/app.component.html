@@ -8,7 +8,7 @@
           (click)="lightSwitch(i+1, light.state.on)">
         </kendo-switch>
       </div>
-      <div class="light-slider">
+      <div class="light-bright">
         <kendo-slider
           [(ngModel)]="light.state.bri" 
           (click)="lightBright(i+1, light.state.bri)"
@@ -16,6 +16,26 @@
           [max]=254
           [smallStep]=10>
         </kendo-slider>
+      </div>
+      <div class="light-go" *ngIf="light.state.hue">
+        <div class="light-hue">
+          <kendo-slider
+            [(ngModel)]="light.state.hue"
+            (click)="lightHue(i+1, light.state.hue)"
+            [min]=0
+            [max]=65535
+            [smallStep]=1500>
+          </kendo-slider>
+          </div>
+          <div class="light-sat">
+          <kendo-slider
+            [(ngModel)]="light.state.sat"
+            (click)="lightSat(i+1, light.state.sat)"
+            [min]=0
+            [max]=254
+            [smallStep]=10>
+          </kendo-slider>
+        </div>
       </div>
     </div>
   </li>

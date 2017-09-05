@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 })
 
 export class AppComponent implements OnInit {
-  username: string = "<insert username";
+  username: string = "<insert username>";
   hueApi: string = `http://192.168.0.103/api/${this.username}/lights`;
   lights: string[];
 
@@ -24,6 +24,22 @@ export class AppComponent implements OnInit {
 
   lightBright(lightNumber, briValue ){
     this.http.put(`${this.hueApi}/${lightNumber}/state`, { "bri": briValue })
+    .subscribe(
+      data => { console.log(data); },
+      err => { console.log('Something went wrong!'); } 
+    );
+  }
+
+  lightHue(lightNumber, hueValue ){
+    this.http.put(`${this.hueApi}/${lightNumber}/state`, { "hue": hueValue })
+    .subscribe(
+      data => { console.log(data); },
+      err => { console.log('Something went wrong!'); } 
+    );
+  }
+
+  lightSat(lightNumber, satValue ){
+    this.http.put(`${this.hueApi}/${lightNumber}/state`, { "sat": satValue })
     .subscribe(
       data => { console.log(data); },
       err => { console.log('Something went wrong!'); } 
