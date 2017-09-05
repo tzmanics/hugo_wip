@@ -1,6 +1,10 @@
-<button class="btn btn-secondary" (click)="subscribe()">Subscribe</button>
 <button class="btn btn-secondary" (click)="lightOff()">Off</button>
-<button class="btn btn-secondary" (click)="getAllLights()">All Lights</button>
-<p>
-  {{ lights || json }}
-</p>
+<button class="btn btn-secondary" (click)="lightOn()">On</button>
+
+<ul *ngFor="let light of lights; let i = index">
+  <li>
+    <div class="light-box">
+      <h3> {{ light.name }} </h3>
+    </div>
+  </li>
+</ul>
